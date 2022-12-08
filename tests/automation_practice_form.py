@@ -7,7 +7,7 @@ from selene import command, have, be
 def given_opened_page_wo_ads():
     browser.open('https://demoqa.com/automation-practice-form')
     browser.all('[id^=google_ads_iframe][id$=__container__]') \
-        .should(have.size_greater_than_or_equal(3)) \
+        .should(have.size_greater_than_or_equal(0)) \
         .perform(command.js.remove)
 
 
@@ -38,7 +38,7 @@ def test_submit_from():
     browser.element('#react-select-3-input').perform(command.js.scroll_into_view).type('NCR').press_enter()
     browser.element('#react-select-4-input').perform(command.js.scroll_into_view).type('Delhi').press_enter()
 
-    browser.element('#submit').click()
+    browser.element('#submit').press_enter()
 
     browser.element('[id=example-modal-sizes-title-lg]').should(be.visible)
     browser.element('.modal-content') \
