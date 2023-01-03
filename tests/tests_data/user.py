@@ -20,9 +20,9 @@ class User:
     gender: Gender = Gender.Male
     hobbies: Tuple[Hobbies] = (Hobbies.Sports, Hobbies.Reading)
     subjects: Tuple[str] = ('Physics', 'Math')
-    birthday_day = '15'
-    birthday_month = 'March'
-    birthday_year = '1990'
+    birthday_day: int = 15
+    birthday_month: int = 3
+    birthday_year: int = 1990
     first_name: str = 'firstName'
     last_name: str = 'lastName'
     email: str = 'name@example.com'
@@ -31,6 +31,3 @@ class User:
     address: str = 'Sample address'
     state: str = 'NCR'
     city: str = 'Delhi'
-
-
-test_user = User()
