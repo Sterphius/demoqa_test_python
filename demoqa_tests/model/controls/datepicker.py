@@ -4,17 +4,14 @@ from selenium.webdriver import Keys
 
 import selene
 
-import demoqa_tests.utils.config
+from demoqa_tests.utils import config
 
 
 class DatePicker:
     def __init__(self, element: selene.Element):
         self.element = element
 
-    def set_date(self, value: datetime.date):
-        if sys.platform == 'darwin':
-            key = Keys.COMMAND
-        else:
-            key = Keys.CONTROL
-        self.element.send_keys(key, 'a').type(value.strftime(demoqa_tests.utils.config.input_datetime_format)) \
-            .press_enter()
+    def set_date(self, date: datetime.date):
+        self.element.send_keys(
+            Keys.COMMAND if sys.platform == 'darwin' else Keys.CONTROL, 'a') \
+            .type(date.strftime(config.input_datetime_format))
