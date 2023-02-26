@@ -1,3 +1,4 @@
-pytest
+pytest >= 7.2.0
 selene >= 2.0.b16
-allure-pytest
+python-dotenv >= 0.21.0
+allure-pytest >= 2.12.0
